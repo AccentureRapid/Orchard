@@ -1,0 +1,9 @@
+﻿<Placement>
+  <Match ContentType="Advertisement">
+
+    <Place Fields_Common_Text_Edit-Url="Content:1" />
+    <Place Fields_Common_Text_Edit-Description="Content:2.2" />
+
+    <Place Fields_MediaLibraryPicker_Edit-AdvertisementPicture="Content:1.1" />
+  </Match>
+</Placement>

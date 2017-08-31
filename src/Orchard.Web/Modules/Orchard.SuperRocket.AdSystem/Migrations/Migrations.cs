@@ -41,47 +41,33 @@ namespace Orchard.SuperRocket.AdSystem.Migrations
             #region Html packaged module
             {
 
-                ContentDefinitionManager.AlterPartDefinition("HtmlModulePart", builder => builder.Attachable());
-                ContentDefinitionManager.AlterTypeDefinition("HtmlModule", cfg => cfg
+                ContentDefinitionManager.AlterPartDefinition("AdvertisementPart", builder => builder.Attachable());
+                ContentDefinitionManager.AlterTypeDefinition("Advertisement", cfg => cfg
+                    .WithPart("Advertisement")
                     .WithPart("CommonPart")
-                    .WithPart("HtmlModulePart")
+                    .WithPart("TitlePart")
+                    .WithPart("BodyPart")
+                    .WithPart("AdvertisementPart")
+                    .Draftable()
                     .Creatable()
                     .Listable()
                     .Indexed()
                     );
 
-                ContentDefinitionManager.AlterPartDefinition("HtmlModulePart", partBuilder => partBuilder
-                    .WithField("Title", fieldBuilder => fieldBuilder.OfType("TextField")
-                        .WithDisplayName("Module Title")
-                        .WithSetting("TextFieldSettings.Required", "true")
-                        .WithSetting("TextFieldSettings.Flavor", "Wide"))
-                    .WithField("Author", fieldBuilder => fieldBuilder.OfType("TextField")
-                        .WithDisplayName("Module Author")
-                        .WithSetting("TextFieldSettings.Required", "false")
-                        .WithSetting("TextFieldSettings.Flavor", "Wide"))
-                   .WithField("Description", fieldBuilder => fieldBuilder.OfType("TextField")
-                        .WithDisplayName("Module Description")
-                        .WithSetting("TextFieldSettings.Required", "false")
-                        .WithSetting("TextFieldSettings.Flavor", "Wide"))
+                ContentDefinitionManager.AlterPartDefinition("Advertisement", partBuilder => partBuilder
                    .WithField("Url", fieldBuilder => fieldBuilder.OfType("TextField")
-                        .WithDisplayName("Introduction Url")
+                        .WithDisplayName("广告链接地址")
                         .WithSetting("TextFieldSettings.Required", "false")
                         .WithSetting("TextFieldSettings.Flavor", "Wide"))
                         );
 
-                ContentDefinitionManager.AlterPartDefinition("HtmlModulePart",
+                ContentDefinitionManager.AlterPartDefinition("Advertisement",
                     builder => builder
-                        .WithField("HtmlModuleFile",
+                        .WithField("AdvertisementPicture",
                             fieldBuilder => fieldBuilder
                                 .OfType("MediaLibraryPickerField")
-                                .WithDisplayName("Module File")));
+                                .WithDisplayName("广告图片")));
 
-                ContentDefinitionManager.AlterPartDefinition("HtmlModulePart",
-                     builder => builder
-                         .WithField("HtmlModuleIco",
-                             fieldBuilder => fieldBuilder
-                                 .OfType("MediaLibraryPickerField")
-                                 .WithDisplayName("Module ICO")));
             }
 
 
