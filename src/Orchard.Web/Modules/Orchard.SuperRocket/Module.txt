@@ -1,0 +1,9 @@
+﻿Name: 广告管理系统
+AntiForgery: enabled
+Author: The dystudio.net Team
+Website: http://www.dystudio.net
+Version: 1.0
+OrchardVersion: 1.0
+Description: 提供一个广告管理系统.
+FeatureDescription: 提供一个广告管理系统.
+Category: A SuperRocket
