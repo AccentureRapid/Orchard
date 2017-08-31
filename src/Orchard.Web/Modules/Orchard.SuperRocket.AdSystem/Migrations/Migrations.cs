@@ -45,6 +45,7 @@ namespace Orchard.SuperRocket.AdSystem.Migrations
                 ContentDefinitionManager.AlterTypeDefinition("Advertisement", cfg => cfg
                     .WithPart("Advertisement")
                     .WithPart("CommonPart")
+                    .WithPart("PublishLaterPart")
                     .WithPart("TitlePart")
                     .WithPart("BodyPart")
                     .WithPart("AdvertisementPart")
